@@ -1,0 +1,21 @@
+{
+    "name": "eventmanager/eventmanager",
+    "type": "library",
+    "description": "PHP Event Manager",
+    "keywords": ["events", "event manager", "event driven"],
+    "homepage": "https://github.com/ashwinks/php-event-manager.git",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ashwin Surajbali",
+            "email": "ashwin@redinkdesign.net",
+            "homepage": "http://www.redinkdesign.co"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "EventManager": "." }
+    }
+}
