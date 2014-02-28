@@ -13,13 +13,11 @@ class EventManager
      */
     public static function getInstance()
     {
-
         if (!self::$instance) {
             self::$instance = new self();
         }
 
         return self::$instance;
-
     }
 
     /**
@@ -29,7 +27,6 @@ class EventManager
      */
     public function emit($event_name, array $data = array())
     {
-
         $listener = $this->getListener($event_name);
         if (!$listener) {
             return $this;
@@ -40,7 +37,6 @@ class EventManager
         }
 
         return $this;
-
     }
 
     /**
@@ -52,9 +48,7 @@ class EventManager
      */
     public function on($event_name, $callback, $priority = 1)
     {
-
         return $this->registerEvent($event_name, $callback, $priority);
-
     }
 
     /**
@@ -64,9 +58,7 @@ class EventManager
      */
     public function detach($event_name)
     {
-
         return $this->deRegisterEvent($event_name);
-
     }
 
     /**
@@ -78,7 +70,6 @@ class EventManager
      */
     public final function registerEvent($event_name, $callback, $priority)
     {
-
         $event_name = trim($event_name);
 
         if (!isset($this->_listeners[$event_name])) {
@@ -98,7 +89,6 @@ class EventManager
         }
 
         return $this;
-
     }
 
     /**
@@ -108,13 +98,11 @@ class EventManager
      */
     public final function deRegisterEvent($event_name)
     {
-
         if (isset($this->_listeners[$event_name])) {
             unset($this->_listeners[$event_name]);
         }
 
         return $this;
-
     }
 
     /**
@@ -123,9 +111,7 @@ class EventManager
      */
     public function getListeners()
     {
-
         return $this->_listeners;
-
     }
 
     /**
@@ -134,24 +120,20 @@ class EventManager
      */
     public function getListener($listener)
     {
-
         if (isset($this->_listeners[$listener])) {
             return $this->_listeners[$listener];
         }
 
         return false;
-
     }
 
     private function _sortListenerByPriority($a, $b)
     {
-
         if ($a['priority'] == $b['priority']) {
             return 0;
         }
 
         return ($a['priority'] < $b['priority']) ? -1 : 1;
-
     }
 
 }
