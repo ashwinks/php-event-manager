@@ -1,5 +1,7 @@
 <?php
 
+namespace EventManager;
+
 class EventManager
 {
 
